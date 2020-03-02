@@ -19,17 +19,17 @@ package com.example.android.camera2basic
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
-import android.support.v4.app.DialogFragment
+import androidx.fragment.app.DialogFragment
 
 /**
  * Shows an error message dialog.
  */
-class ErrorDialog : DialogFragment() {
+class ErrorDialog : androidx.fragment.app.DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog =
             AlertDialog.Builder(activity)
-                    .setMessage(arguments.getString(ARG_MESSAGE))
-                    .setPositiveButton(android.R.string.ok) { _, _ -> activity.finish() }
+                    .setMessage(arguments?.getString(ARG_MESSAGE))
+                    .setPositiveButton(android.R.string.ok) { _, _ -> activity?.finish() }
                     .create()
 
     companion object {
